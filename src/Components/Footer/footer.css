@@ -1,0 +1,196 @@
+/* Main footer container */
+.footer_data {
+    background-color: #000000;
+    color: #757575;
+    padding: 40px 15% 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Social Media Section */
+.social_media {
+    margin-bottom: 30px;
+}
+
+.social_icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.social_icons li {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.social_icons li:hover {
+    transform: scale(1.1);
+}
+
+.social_icons .MuiSvgIcon-root {
+    font-size: 30px;
+    color: #757575;
+    transition: color 0.2s ease;
+}
+
+/* Individual icon hover colors */
+.social_icons li:first-child .MuiSvgIcon-root:hover {
+    color: #4267B2; /* Facebook blue */
+}
+
+.social_icons li:nth-child(2) .MuiSvgIcon-root:hover {
+    color: #E1306C; /* Instagram pink */
+}
+
+.social_icons li:last-child .MuiSvgIcon-root:hover {
+    color: #FF0000; /* YouTube red */
+}
+
+/* Footer link sections container */
+.footer_data > div:not(.social_media):not(.service_code):not(.copy-write) {
+    margin-bottom: 30px;
+}
+
+/* Footer lists styling */
+.footer_data ul:not(.social_icons) {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+/* Footer list items */
+.footer_data li:not(.social_icons li) {
+    cursor: pointer;
+    font-size: 13px;
+    color: #757575;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.footer_data li:not(.social_icons li):hover {
+    color: #e5e5e5;
+    text-decoration: underline;
+}
+
+/* Horizontal rule styling */
+.footer_data hr {
+    border: 0;
+    border-top: 1px solid #333;
+    margin: 20px 0;
+    grid-column: 1 / -1;
+}
+
+/* Service Code button styling */
+.service_code {
+    margin: 20px 0 15px;
+}
+
+.service_code p {
+    display: inline-block;
+    border: 1px solid #757575;
+    padding: 8px 12px;
+    font-size: 13px;
+    color: #757575;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.service_code p:hover {
+    color: #e5e5e5;
+    border-color: #e5e5e5;
+}
+
+/* Copyright text styling */
+.copy-write {
+    color: #757575;
+    font-size: 11px;
+    margin-top: 20px;
+}
+
+.copy-write p {
+    margin: 0;
+}
+
+/* Responsive design for different screen sizes */
+
+/* Large tablets and small desktops */
+@media screen and (max-width: 960px) {
+    .footer_data {
+        padding: 40px 10% 20px;
+    }
+    
+    .footer_data ul:not(.social_icons) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+    .footer_data {
+        padding: 40px 5% 20px;
+    }
+    
+    .footer_data ul:not(.social_icons) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .social_icons {
+        justify-content: center;
+    }
+}
+
+/* Mobile phones */
+@media screen and (max-width: 480px) {
+    .footer_data {
+        padding: 30px 20px 20px;
+    }
+    
+    .footer_data ul:not(.social_icons) {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        text-align: center;
+    }
+    
+    .social_icons {
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .social_icons .MuiSvgIcon-root {
+        font-size: 28px;
+    }
+    
+    .service_code {
+        text-align: center;
+    }
+    
+    .copy-write {
+        text-align: center;
+    }
+}
+
+/* Optional: Add hover effect for the entire footer sections */
+.footer_data > div:hover li:not(.social_icons li) {
+    opacity: 0.9;
+}
+
+/* Optional: Make the footer links more touch-friendly on mobile */
+@media (hover: none) and (pointer: coarse) {
+    .footer_data li:not(.social_icons li) {
+        padding: 8px 0;
+    }
+    
+    .service_code p {
+        padding: 12px 20px;
+    }
+    
+    .social_icons li {
+        padding: 5px;
+    }
+}

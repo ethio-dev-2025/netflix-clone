@@ -1,0 +1,131 @@
+/* Main outer container - sticky header */
+.header_outer_container {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(20, 20, 20);
+    height: 70px;
+    color: white;
+    transition: all 0.3s ease-in;
+    z-index: 100;
+    width: 100%;
+}
+
+/* Inner container for content */
+.header_container {
+    width: 95%;
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Left section with navigation */
+.header_left ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.header_left li {
+    cursor: pointer;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.header_left li:hover {
+    color: #e50914; /* Netflix red on hover */
+}
+
+/* Netflix logo styling */
+.header_left li:first-child {
+    color: #e50914;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+/* Right section with icons */
+.header_right ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.header_right li {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.header_right a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.header_right a:hover {
+    color: #e50914;
+}
+
+/* Material-UI icon styling */
+.header_right .MuiSvgIcon-root {
+    font-size: 24px;
+    color: white;
+}
+
+.header_right .MuiSvgIcon-root:hover {
+    color: #e50914;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .header_outer_container {
+        height: 60px;
+    }
+    
+    .header_left ul {
+        gap: 12px;
+    }
+    
+    .header_left li {
+        font-size: 12px;
+    }
+    
+    .header_left li:first-child {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+    
+    .header_right ul {
+        gap: 12px;
+    }
+    
+    /* Hide some menu items on mobile */
+    .header_left li:nth-child(6),
+    .header_left li:nth-child(7) {
+        display: none;
+    }
+}
+
+/* Scroll effect - changes background when scrolling */
+.header_outer_container.scrolled {
+    background-color: rgba(20, 20, 20, 0.95);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Active link styling */
+.header_left li.active {
+    color: #e50914;
+    font-weight: 500;
+}
